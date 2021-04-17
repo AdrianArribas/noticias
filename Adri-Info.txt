@@ -2,3 +2,9 @@ API Direccion:
 https://newsapi.org/ 
 API KEY : 
 2226a8606b174a9f91e18542709e1e64
+
+
+
+- operador SPREAD (...any): Sirve para iterar un array, para por ejemplo meter 
+sus elementos en otro array sin usar un for. se puede hacer con varios Array;
+ejemplos: https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Spread_syntax
