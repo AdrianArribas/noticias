@@ -1,7 +1,14 @@
-API Direccion: 
+API Noticias: 
 https://newsapi.org/ 
 API KEY : 
 2226a8606b174a9f91e18542709e1e64
+
+API Tiempo:
+https://openweathermap.org/
+API KEY : 
+29a1d00ea7ddcdd921472bf4a3bd1da5
+Nombre:
+Default
 
 
 

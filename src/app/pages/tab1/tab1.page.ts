@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs';
 import { NoticiasService } from 'src/app/services/noticias.service';
-import { Article } from '../../interfaces/interfaces';
+import { Article, RespuestaTopHeadLines } from '../../interfaces/interfaces';
 
 @Component({
   selector: 'app-tab1',
@@ -16,7 +16,7 @@ export class Tab1Page implements OnInit {
   constructor(private nociticasService: NoticiasService) { }
 
   ngOnInit() {
-    this.nociticasService.getTopHeadlines().subscribe((res) => {
+    this.nociticasService.getTopHeadlines().subscribe((res: RespuestaTopHeadLines) => {
       console.log('res:', res);
       this.noticias.push(...res.articles); //ver notas
     });
