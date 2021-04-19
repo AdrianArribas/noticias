@@ -18,16 +18,16 @@ const headers = new HttpHeaders({
 export class NoticiasService {
 
 
-
-
   constructor(private http: HttpClient) { }
 
-  public getTopHeadlines() {
-    return this.setQuery<RespuestaTopHeadLines>('/top-headlines?country=us&category=business');
+  public getTopHeadlines(page) {
+    console.log(page);
+    console.log('query:', '/top-headlines?country=us&category=business' + '&page=' + page + '');
+    return this.setQuery<RespuestaTopHeadLines>('/top-headlines?country=us&category=business' + '&page=' + page);
   }
 
-  public getNewsByCategory(category: string) {
-    return this.setQuery<RespuestaTopHeadLines>('/top-headlines?country=us&category=' + category);
+  public getNewsByCategory(category: string, page: number) {
+    return this.setQuery<RespuestaTopHeadLines>('/top-headlines?country=us&category=' + category + '&page=' + page);
   }
 
   private setQuery<T>(slug: string) {  // poniendo la <T> en el tipado de respuesta se deja la respuesta como generica para que el que llama al metodo la establezca
