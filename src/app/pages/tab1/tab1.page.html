@@ -7,6 +7,15 @@
 </ion-header>
 
 <ion-content>
+
+  <ion-segment (ionChange)="segmentChanged($event)" value="NewsApi">
+    <ion-segment-button value="NewsApi">
+      <ion-label>NewsApi</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="MediaStack">
+      <ion-label>MediaStack</ion-label>
+    </ion-segment-button>
+  </ion-segment>
   <!-- 
   <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
     <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Cargando más Noticias">
