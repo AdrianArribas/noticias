@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { PopoverController } from '@ionic/angular';
 
 @Component({
@@ -8,20 +8,38 @@ import { PopoverController } from '@ionic/angular';
 })
 export class PopoverComponent implements OnInit {
 
-  public opciones = [
-    {
-      texto: 'Compartir',
-      icon: 'share-social'
-    },
-    {
-      texto: 'Favoritos',
-      icon: 'heart'
-    }
-  ];
+
+  @Input() fav;
+  @Input() cosa;
+
+  public opciones = [];
 
   constructor(private popoverCtrl: PopoverController) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+
+    if (!this.fav) {
+      this.opciones = [{
+        texto: 'Compartir',
+        icon: 'share-social'
+      },
+      {
+        texto: 'Favoritos',
+        icon: 'heart'
+      }];
+    } else {
+      this.opciones = [{
+        texto: 'Compartir',
+        icon: 'share-social'
+      },
+      {
+        texto: 'Eliminar',
+        icon: 'heart-dislike-outline'
+      }];
+    }
+
+  }
+
   public onClick(ev) {
     this.popoverCtrl.dismiss({ item: ev });
   }

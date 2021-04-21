@@ -16,7 +16,7 @@
 
 <ion-content>
 
-  <app-noticias [noticias]='noticias'></app-noticias>
+  <app-noticias [noticias]='noticias' [fav]='false'></app-noticias>
 
   <ion-infinite-scroll threshold="25%" [disabled]="false" position="bottom" (ionInfinite)="loadData($event)">
     <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
